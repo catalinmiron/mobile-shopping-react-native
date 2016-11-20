@@ -46,18 +46,19 @@ export default class ProductDetails extends React.Component {
       scrollY: new Animated.Value(0)
     }
   }
+  
 
-  componentDidMount() {
-    this.state.scrollY.addListener(this.updateView.bind(this));
-  }
+  // componentDidMount() {
+  //   this.state.scrollY.addListener(this.updateView.bind(this));
+  // }
 
-  componentWillUnmount() {
-    this.state.scrollY.removeListener()
-  }
+  // componentWillUnmount() {
+  //   this.state.scrollY.removeListener()
+  // }
 
-  updateView(offset) {
-    // offset.value
-  }
+  // updateView(offset) {
+  //   // this.state.scrollY.setValue(offset.value)
+  // }
 
   render() {
     const {product} = this.props;
@@ -122,8 +123,8 @@ export default class ProductDetails extends React.Component {
         </Animated.View>
         <Animated.View style={[styles.container, {
           opacity: this.state.scrollY.interpolate({
-            inputRange: [0, HERO_HEIGHT - NAV_HEIGHT, HERO_HEIGHT, HERO_HEIGHT + 1],
-            outputRange: [0, 0, 1, 1]
+            inputRange: [-1, 0, HERO_HEIGHT - NAV_HEIGHT, HERO_HEIGHT + 1],
+            outputRange: [0, 0, 0, 1]
           }),
           transform: [{
             translateY: this.state.scrollY.interpolate({
@@ -176,7 +177,7 @@ export default class ProductDetails extends React.Component {
     }]}>
       <View style={styles.colorPicker}>
         {product.colors.map((color, index) => {
-          return <TouchableOpacity onPress={() => this.onColorPress(color)} key={color+''+index}>
+          return <TouchableOpacity onPress={this.onColorPress.bind(this, color)} key={color+''+index}>
             <View key={index} style={{position: 'relative', marginBottom: sizes.defaultSpacing / 2}}>
               <View 
                 style={[theme.productColorBigBubble, {
@@ -197,6 +198,9 @@ export default class ProductDetails extends React.Component {
   }
 
   onColorPress(color) {
+    return;
+
+    // use redux :)
     this.setState({selectedColor: color})
   }
 

@@ -56,7 +56,7 @@ const PRODUCT_LIST = [{
   title: 'Fitbit Surge',
   price: '249,95 €',
   colors: ['black', 'blue', 'orange'],
-  selected: 'black'
+  selectedColor: 'black'
 }]
 const PADDING = 40
 const INDICATOR_CONTAINER_HEIGHT = 2
@@ -70,7 +70,7 @@ export default class ProductList extends React.Component {
     navigationBar: {
       title: 'Products',
       backgroundColor: 'rgba(255, 255, 255, .5)',
-      visible: true,
+      visible: false,
     },
   };
 
