@@ -1,0 +1,19 @@
+{
+  "name": "mobileshopping",
+  "version": "0.0.0",
+  "description": "Hello Exponent!",
+  "author": "mironcatalin@gmail.com",
+  "private": true,
+  "main": "main.js",
+  "dependencies": {
+    "@exponent/ex-navigation": "^2.0.0",
+    "@exponent/vector-icons": "~2.0.3",
+    "exponent": "~11.0.2",
+    "react": "~15.3.2",
+    "react-native": "git+https://github.com/exponentjs/react-native#sdk-11.0.3",
+    "react-native-animate-number": "^0.1.2"
+  },
+  "devDependencies": {
+    "@exponent/vector-icons": "^2.0.3"
+  }
+}
