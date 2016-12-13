@@ -2,6 +2,8 @@
 
 _Credits: [Mobile shopping interaction](https://dribbble.com/shots/3079240-Mobile-Shopping-Interaction) by [Artiom Piatrykin](https://dribbble.com/ArtiomP)_
 
+
+Exponent: https://getexponent.com/@catalinmiron/mobile-shopping-react-native
 ----
 
 Stack: 
