@@ -3,7 +3,7 @@ import { View } from "react-native";
 import Button from "./button";
 import theme from "./theme";
 
-export const RenderProductFooter = () => {
+export const RenderProductFooter = ({ navigation }) => {
   return (
     <View
       style={[
@@ -17,17 +17,11 @@ export const RenderProductFooter = () => {
         },
       ]}
     >
-      <Button
-        onPress={() => console.log("Here will be navigator")}
-        theme="light"
-      >
+      <Button onPress={() => console.log("Added to cart")} theme="light">
         ADD TO CART
       </Button>
 
-      <Button
-        onPress={() => console.log("Here will be navigator")}
-        theme="dark"
-      >
+      <Button onPress={() => navigation.navigate("Checkout")} theme="dark">
         BUY NOW
       </Button>
     </View>

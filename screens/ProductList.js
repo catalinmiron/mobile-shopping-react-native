@@ -9,6 +9,8 @@ import {
   Animated,
   TouchableWithoutFeedback,
 } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import { data } from "../data";
 import ProductRow from "../components/ProductRow";
@@ -43,6 +45,7 @@ export default function ProductList({ navigation }) {
   // };
 
   return (
+    // <NavigationContainer>
     <View style={[theme.container, theme.bg]}>
       <Animated.ScrollView
         pagingEnabled
@@ -57,13 +60,21 @@ export default function ProductList({ navigation }) {
       >
         {data.map((item, i) => {
           console.log(i);
-          return <ProductRow product={item} i={Number(i)} key={i + "21231"} />;
+          return (
+            <ProductRow
+              product={item}
+              i={i}
+              navigation={navigation}
+              key={i + "21231"}
+            />
+          );
         })}
       </Animated.ScrollView>
       <Animated.View style={ss.indicatorContainer}>
         <Animated.View style={[ss.indicator, { left: indicator }]} />
       </Animated.View>
     </View>
+    // </NavigationContainer>
   );
 }
 

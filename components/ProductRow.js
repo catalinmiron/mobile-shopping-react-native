@@ -15,8 +15,7 @@ import theme from "./theme";
 import RenderProductFooter from "./RenderProductFooter";
 const { width, height } = Dimensions.get("window");
 
-const ProductRow = (product, i) => {
-  const animatedValue = new Animated.ValueXY();
+const ProductRow = ({ product, i, navigation }) => {
   console.log(i);
 
   return (
@@ -40,27 +39,7 @@ const ProductRow = (product, i) => {
         <View style={[theme.newLabel, theme.absoluteTopLeft, theme.greenTheme]}>
           <Text style={[theme.newLabelText, theme.customFont]}>NEW</Text>
         </View>
-        <Animated.Image
-          source={{ uri: product.product.image }}
-          style={[
-            theme.image,
-            // {
-            //   transform: [
-            //     {
-            //       scale: animatedValue.x.interpolate({
-            //         inputRange: [
-            //           (i - 1) * width,
-            //           i * width,
-            //           (i + 1) * width,
-            //           (i + 2) * width,
-            //         ],
-            //         outputRange: [0.3, 0.3, 0.3, 0.3],
-            //       }),
-            //     },
-            //   ],
-            // },
-          ]}
-        />
+        <Animated.Image source={{ uri: product.image }} style={[theme.image]} />
         <Text style={[theme.customFont, theme.title]}>{product.title}</Text>
         <Text style={[theme.customFont, theme.price]}>{product.price}</Text>
         <View
@@ -70,7 +49,7 @@ const ProductRow = (product, i) => {
             marginVertical: 20,
           }}
         >
-          {product.product.colors.map((color, index) => {
+          {product.colors.map((color, index) => {
             return (
               <View
                 key={index}
@@ -104,7 +83,7 @@ const ProductRow = (product, i) => {
           })}
         </View>
 
-        <RenderProductFooter />
+        <RenderProductFooter navigation={navigation}/>
       </View>
     </View>
   );

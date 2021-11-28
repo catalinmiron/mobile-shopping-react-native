@@ -6,9 +6,14 @@ import ProductList from "./screens/ProductList";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import styles from "./components/theme";
+import CartScreen from "./screens/CartScreen";
+import HomeScreen from "./screens/HomeScreen";
+import BuyNowScreen from "./screens/BuyNowScreen";
 
 const Stack = createNativeStackNavigator();
+const BottomTabs = createBottomTabNavigator();
 const App = () => {
   let [fontsLoaded] = useFonts({
     Skyhook: require("./assets/fonts/SkyhookMono.ttf"),
@@ -20,13 +25,13 @@ const App = () => {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="List">
+      <Stack.Navigator>
         <Stack.Screen
-          name="Product List"
-          title="List"
-          component={ProductList}
+          name="Home"
+          component={HomeScreen}
+          options={{ headerShown: false }}
         />
-        <Stack.Screen name="ProductDetails" component={ProductList} />
+        <Stack.Screen name={"Checkout"} component={BuyNowScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
