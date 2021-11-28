@@ -1,11 +1,14 @@
-// import Exponent, { Font, Components } from "exponent";
-import React, { useEffect, useState } from "react";
-import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import React from "react";
+import { Text, View } from "react-native";
 import AppLoading from "expo-app-loading";
 import { useFonts } from "expo-font";
+import ProductList from "./screens/ProductList";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import styles from "./components/theme";
 
+const Stack = createNativeStackNavigator();
 const App = () => {
   let [fontsLoaded] = useFonts({
     Skyhook: require("./assets/fonts/SkyhookMono.ttf"),
@@ -16,9 +19,16 @@ const App = () => {
   }
 
   return (
-    <View style={styles.container}>
-      <Text style={{ fontFamily: "Skyhook" }}>dkaakdak</Text>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="List">
+        <Stack.Screen
+          name="Product List"
+          title="List"
+          component={ProductList}
+        />
+        <Stack.Screen name="ProductDetails" component={ProductList} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 
