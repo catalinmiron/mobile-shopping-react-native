@@ -1,19 +1,28 @@
 {
-  "name": "mobileshopping",
-  "version": "0.0.0",
-  "description": "Hello Exponent!",
-  "author": "mironcatalin@gmail.com",
-  "private": true,
-  "main": "main.js",
+  "name": "new-mobile-shopping-react-native",
+  "version": "1.0.0",
+  "main": "node_modules/expo/AppEntry.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "eject": "expo eject"
+  },
   "dependencies": {
-    "@exponent/ex-navigation": "^2.0.0",
-    "@exponent/vector-icons": "~2.0.3",
-    "exponent": "~11.0.2",
-    "react": "~15.3.2",
-    "react-native": "git+https://github.com/exponentjs/react-native#sdk-11.0.3",
-    "react-native-animate-number": "^0.1.2"
+    "@expo-google-fonts/inter": "^0.2.0",
+    "expo": "~43.0.2",
+    "expo-app-loading": "~1.2.1",
+    "expo-font": "~10.0.3",
+    "expo-status-bar": "~1.1.0",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "react-native": "0.64.3",
+    "react-native-web": "0.17.1"
   },
   "devDependencies": {
-    "@exponent/vector-icons": "^2.0.3"
-  }
+    "@babel/core": "^7.12.9",
+    "babel-preset-expo": "^8.5.1"
+  },
+  "private": true
 }
