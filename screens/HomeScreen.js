@@ -17,20 +17,28 @@ const HomeScreen = () => {
         name="List"
         component={ProductList}
         options={{
-          tabBarIcon: ({ focused }) => {
-            <Image source={require("../assets/idea.png")} />;
-          },
+          tabBarIcon: ({ focused }) => (
+            <View>
+              <Image
+                source={require("../assets/idea.png")}
+                style={{ width: 24, height: 24 }}
+              />
+            </View>
+          ),
         }}
       />
       <Tab.Screen
         name="Cart"
         component={CartScreen}
         options={{
-          tabBarIcon: ({ focused }) => {
+          tabBarIcon: ({ focused }) => (
             <View>
-              <Image source={require("../assets/idea.png")} />;
-            </View>;
-          },
+              <Image
+                source={require("../assets/idea.png")}
+                style={{ width: 24, height: 24 }}
+              />
+            </View>
+          ),
         }}
       />
     </Tab.Navigator>
